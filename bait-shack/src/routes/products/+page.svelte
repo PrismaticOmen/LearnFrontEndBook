@@ -1,28 +1,29 @@
 <script lang="ts">
+  import PencilIcon from "~icons/mdi/pencil";
+  import GarbageIcon from "~icons/mdi/garbage";
+  export let data;
   export let form;
 
-  import { getToastStore, type ToastSettings } from "@skeletonlabs/skeleton";
-  import { goto } from "$app/navigation";
   import BackArrowIcon from "~icons/mdi/arrow-left";
+
+  let products = data.products ? data.products.items : [];
+
+  import { getToastStore, type ToastSettings } from "@skeletonlabs/skeleton";
+
   const toastStore = getToastStore();
 
   if (form && form.success) {
     const t: ToastSettings = {
-      message: "You have successfully added a new product",
-      action: {
-        label: "View product",
-        response: () => {
-          goto(`/`);
-        },
-      },
+      message: `You have successfully deleted a product`,
       background: "variant-filled-success",
       timeout: 3000,
     };
+
     toastStore.trigger(t);
   } else if (form && form.error) {
     console.log(form.error);
     const t: ToastSettings = {
-      message: "There was an error adding a new product",
+      message: "There was an error deleting a product",
       background: "variant-filled-error",
       timeout: 3000,
     };
@@ -35,62 +36,48 @@
     <BackArrowIcon class="h5" />
   </a>
   <div class="card-header mb-4 text-center">
-    <span class="h1">Add a new product</span>
+    <span class="h1">Products</span>
   </div>
-  <form
-    class="flex flex-col gap-4"
-    method="POST"
-    action="?/add"
-    enctype="multipart/form-data"
-  >
-    <label class="label">
-      <span>Name<span class="text-sm text-mute text-red-600">*</span></span>
-      <input
-        class="input p-2"
-        type="text"
-        name="name"
-        placeholder="Product name"
-        required
-      />
-    </label>
-    <label class="label">
-      <span>Description</span>
-      <textarea
-        class="textarea p-2"
-        name="description"
-        placeholder="Product description"
-      ></textarea>
-    </label>
-    <label class="label">
-      <span>Price<span class="text-sm text-mute text-red-600">*</span></span>
-      <input
-        class="input p-2"
-        type="number"
-        name="price"
-        placeholder="Product price"
-        required
-      />
-    </label>
-    <label class="label">
-      <span>Stock<span class="text-sm text-mute text-red-600">*</span></span>
-      <input
-        class="input p-2"
-        type="number"
-        name="stock"
-        placeholder="Product stock"
-        required
-      />
-    </label>
-    <label class="label">
-      <span>Image</span>
-      <input
-        class="input p-2"
-        type="file"
-        name="image"
-        accept="image/png, image/jpeg, image/gif"
-        placeholder="Product image"
-      />
-    </label>
-    <button class="btn variant-filled-primary mt-4">Add Product</button>
-  </form>
+  <div class="table-container">
+    <div class="w-full flex justify-end">
+      <a class="btn variant-filled-primary mb-4" href="products/add">
+        Add a new product
+      </a>
+    </div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Unit Price</th>
+          <th>Stock</th>
+          <th class="sr-only">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {#each products as product, i}
+          <tr class="table-row">
+            <td>{product.name}</td>
+            <td>{product.description}</td>
+            <td>${product.price}</td>
+            <td>{product.stock}</td>
+            <td class="flex">
+              <a
+                class="btn !btn-transparent"
+                href="/products/edit/{product.id}"
+              >
+                <PencilIcon class="h5" />
+              </a>
+              <form method="POST" action="?/delete">
+                <input type="hidden" name="id" value={product.id} />
+                <button type="submit" class="btn !bg-transparent">
+                  <GarbageIcon class="h5" />
+                </button>
+              </form>
+            </td>
+          </tr>
+        {/each}
+      </tbody>
+    </table>
+  </div>
 </div>

@@ -1,12 +1,19 @@
-export const actions = {
-  add: async ({ request, locals }) => {
-    const body = Object.fromEntries(await request.formData());
+export const load = async ({ locals }) => {
+  const products = await locals.pb.collection("products").getList();
 
-    let error = null;
-    let success = true;
+  return {
+    products,
+  };
+};
+
+export const actions = {
+  delete: async ({ request, locals }) => {
+    const body = Object.fromEntries(await request.formData());
+    let success, error;
 
     try {
-      await locals.pb.collection("products").create(body);
+      await locals.pb.collection("products").delete(body.id);
+      success = true;
     } catch (err) {
       error = err.originalError;
       success = false;

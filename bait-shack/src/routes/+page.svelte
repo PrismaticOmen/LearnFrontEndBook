@@ -1,33 +1,27 @@
 <script lang="ts">
+  import StoreIcon from "~icons/mdi/store";
+  import BoxIcon from "~icons/mdi/box-variant";
 </script>
 
 <div class="container card min-h-screen mx-auto justify-center my-8 p-8">
   <div class="card-header mb-4 text-center">
-    <span class="h1">Products</span>
+    <span class="h1">Welcome to the Bait Shack</span>
   </div>
-  <!-- Responsive Container (recommended) -->
-  <div class="table-container">
-    <!-- Native Table Element -->
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Unit Price</th>
-          <th>Stock</th>
-          <th class="sr-only">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- {#each tableArr as row, i}
-          <tr>
-            <td>{row.position}</td>
-            <td>{row.name}</td>
-            <td>{row.symbol}</td>
-            <td>{row.weight}</td>
-          </tr>
-        {/each} -->
-      </tbody>
-    </table>
+
+  <div class="flex flex-wrap gap-4 justify-center mt-8">
+    <a
+      href="/products"
+      class="card max-w-[300px] card-hover flex flex-col gap-2 items-center p-4"
+    >
+      <StoreIcon class="h1" />
+      <span class="h2">Products</span>
+    </a>
+    <a
+      href="/orders"
+      class="card max-w-[300px] card-hover flex flex-col gap-2 items-center p-4"
+    >
+      <BoxIcon class="h1" />
+      <span class="h2">Orders</span>
+    </a>
   </div>
 </div>

@@ -10,6 +10,14 @@
 		"src/routes/products/+page.server.ts",
 		"src/routes/+layout.server.ts"
 	],
+	"/products/add": [
+		"src/routes/products/add/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/products/edit/[id]": [
+		"src/routes/products/edit/[id]/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
 	"/signin": [
 		"src/routes/signin/+page.server.ts",
 		"src/routes/+layout.server.ts"

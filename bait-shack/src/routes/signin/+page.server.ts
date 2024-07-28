@@ -1,4 +1,4 @@
-import { error, redirect } from "@sveltejs/kit";
+import { redirect } from "@sveltejs/kit";
 
 export function load({ locals }) {
   if (locals.pb.authStore.isValid) {
