@@ -1,0 +1,21 @@
+p  {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+    font-weight: 300;
+    color: cadetblue;
+}
+
+li  {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+    font-weight: 400;
+    color: aquamarine;
+    
+}
+
+figcaption  {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+    font-weight: 600;
+    color:chartreuse;
+}
