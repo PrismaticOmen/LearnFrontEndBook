@@ -19,3 +19,10 @@ figcaption  {
     font-weight: 600;
     color:chartreuse;
 }
+
+.fishContent    {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    font-weight: 400;
+    color: brown;
+}
