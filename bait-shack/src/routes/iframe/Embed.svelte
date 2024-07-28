@@ -20,7 +20,7 @@
     {#each products.items as product (product.id)}
       <div class="product-card">
         <img
-          style="width: 100%; max-width: 300px; margin-bottom: 20px;"
+          style="width: 100%; max-width: 300px; margin-bottom: 20px; display: flex-wrap: wrap;"
           src="http://127.0.0.1:8090/api/files/products/{product.id}/{product.image}"
           alt={product.name}
         />

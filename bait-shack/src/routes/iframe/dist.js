@@ -964,6 +964,7 @@
 				set_style(img, "width", "100%");
 				set_style(img, "max-width", "300px");
 				set_style(img, "margin-bottom", "20px");
+				set_style(img, "display", "flex-wrap: wrap");
 				if (!src_url_equal(img.src, img_src_value = "http://127.0.0.1:8090/api/files/products/" + /*product*/ ctx[4].id + "/" + /*product*/ ctx[4].image)) attr(img, "src", img_src_value);
 				attr(img, "alt", /*product*/ ctx[4].name);
 				attr(h2, "class", "svelte-o3gnxl");

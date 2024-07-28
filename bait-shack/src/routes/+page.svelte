@@ -1,6 +1,6 @@
 <script lang="ts">
   import StoreIcon from "~icons/mdi/store";
-  import BoxIcon from "~icons/mdi/box-variant";
+  import BoxIcon from "~icons/mdi/widgets";
 </script>
 
 <div class="container card min-h-screen mx-auto justify-center my-8 p-8">
@@ -17,11 +17,11 @@
       <span class="h2">Products</span>
     </a>
     <a
-      href="/orders"
+      href="/widgets"
       class="card max-w-[300px] card-hover flex flex-col gap-2 items-center p-4"
     >
       <BoxIcon class="h1" />
-      <span class="h2">Orders</span>
+      <span class="h2">Widgets</span>
     </a>
   </div>
 </div>

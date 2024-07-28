@@ -25,5 +25,8 @@
 	"/signout": [
 		"src/routes/signout/+page.server.ts",
 		"src/routes/+layout.server.ts"
+	],
+	"/widgets": [
+		"src/routes/+layout.server.ts"
 	]
 }
