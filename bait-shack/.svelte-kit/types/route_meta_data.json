@@ -1,4 +1,21 @@
 {
-	"/": [],
-	"/signin": []
+	"/": [
+		"src/routes/+layout.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/iframe": [
+		"src/routes/iframe/+server.ts"
+	],
+	"/products": [
+		"src/routes/products/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/signin": [
+		"src/routes/signin/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/signout": [
+		"src/routes/signout/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	]
 }
