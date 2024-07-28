@@ -1,6 +1,16 @@
 import { redirect } from "@sveltejs/kit";
 
-export const load = ({ locals, request }) => {
+export const load = async ({ locals, request }) => {
+  try {
+    await locals.pb.health.check();
+  } catch (e) {
+    return {
+      user: null,
+      health: {
+        status: "down",
+      },
+    };
+  }
   if (locals.user) {
     return {
       user: locals.user,

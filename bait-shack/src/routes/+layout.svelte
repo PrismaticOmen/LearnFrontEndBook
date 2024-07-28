@@ -13,6 +13,7 @@
   storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
   import { AppBar } from "@skeletonlabs/skeleton";
   import IconAccountCircle from "~icons/mdi/account-circle";
+  import Warning from "~icons/mdi/alert-circle-outline";
   import LogOut from "~icons/mdi/logout";
   import { popup } from "@skeletonlabs/skeleton";
   import type { PopupSettings } from "@skeletonlabs/skeleton";
@@ -57,6 +58,20 @@
     </div>
   </AppBar>
 {/if}
+
+<div>
+  {#if data.health && data.health.status === "down"}
+    <aside class="alert variant-filled-error w-[90%] mx-auto mt-5">
+      <!-- Icon -->
+      <div><Warning class="h3" /></div>
+      <!-- Message -->
+      <div class="alert-message">
+        <h3 class="h3">Backend is down</h3>
+        <p>Did you forget to start the backend?</p>
+      </div>
+    </aside>
+  {/if}
+</div>
 
 <main class="container min-h-screen mx-auto flex justify-center items-center">
   <slot />
