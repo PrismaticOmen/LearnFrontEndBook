@@ -5,37 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <h1>Minh likes fish</h1>
-    <aside>Rockfish are protected in Puget Sound, if you catch one please carefully unhook and release them 
+    <aside class="rockfishInfo">Rockfish are protected in Puget Sound, if you catch one please carefully unhook and release them 
         without taking them out of the water.  This is very important for their survival rate</aside>
     <p>Back to the main page <a href="index.html">Main</a></p>
     <header style="border-style:dotted">It's been weird how the header works like this</header>
     <footer style="border-color: aquamarine; border-style: solid;">My foot</footer>
     <aside style="width:33%; margin: 0 auto"><h2 style="background-color: blueviolet; margin: 0 auto">Rockfish are native to Puget Sound</h2></aside>
     <details>
+        <summary>Why I prefer to bottomfish with barbless hooks</summary>
+        <p>One of the many reasons why I prefer to fish with barbless hooks is because of the amount of snag you will encounter while fishing on
+            the bottom for rockfish, lingcod, or any other species of bottomfish.  Usually, the bottomfish are plentiful enough that you do not need barbs 
+            to limit out.  What is more likely to happen with barbed hooks though, is that you will lose more lures to snags to the point where you will 
+            spend more time retying lures than actually fishing. 
+        </p>
+    </details>
+    <details>
         <summary>What is a rockfish?</summary>
-        <p>A rockfish can be from one out of many species of rockfish, or the family of fish known as Sebastes.
+        <p class="rockfishInfo">A rockfish can be from one out of many species of rockfish, or the family of fish known as Sebastes.
         </p>
         
         <figure style="border: blue; border-style: solid; border-width: thin;">
-            <a href="https://wdfw.wa.gov/species-habitats/species/sebastes-caurinus" title="copper rockfish";><img src="rockfish.jpg" alt="copper rockfish caught on a jig"></a>
-            <figcaption>This rockfish was caught by me on Whidbey Island</figcaption>
+            <a href="https://wdfw.wa.gov/species-habitats/species/sebastes-caurinus" title="copper rockfish";><img src="sitePictureFiles\rockfish.jpg" alt="copper rockfish caught on a jig"></a>
+            <figcaption class="rockfishInfo">This rockfish was caught by me on Whidbey Island</figcaption>
         </figure>
     </details>
     <details>
         <summary>Lures for rockfish</summary>
-        <p class="fishContent">Rockfish are vivacious eaters, they have poor eyesights and will generally attack anything they can see or smell.  Lures and bait are great options for them
+        <p class="rockfishInfo">Rockfish are vivacious eaters, they have poor eyesights and will generally attack anything they can see or smell.  Lures and bait are great options for them
             with lures being preferred as many rockfish species have to be returned to the water alive, and using bait risks gut hooking these creatures which is almost
             a guaranteed death for them.  Below are some of the lures that are effective for rockfish.  
         </p>
         <ul>
-            <li><figure style="border: blue; border-style: solid; border-width: thin;"></figure><img src="fishingGrub.png" alt="brown fishing grub with long swimtail">
+            <li><figure style="border: blue; border-style: solid; border-width: thin;"></figure><img src="sitePictureFiles\fishingGrub.png" alt="brown fishing grub with long swimtail">
             <figcaption>a grub like this on a jighead will be very good for rockfish regardless of species</figcaption>
             </figure></li>
         </ul>
         <a href="#top"><p>return to the top of the page</p></a>
     </details>
+
+    <table id="rockfishTable">
+        <tr>
+            <th>Common species of rockfish in Puget Sound</th>
+            <th>Depths</th>
+            <th>Rarity</th>
+            <th>Additional Notes</th>
+        </tr>
+        <tr>
+            <td>Black Rockfish
+                <img src="sitePictureFiles\boyWBlackRockfish.jpg" size  alt="Boy holding Black Rockfish">
+            </td>
+            <td>Shallow, 10-120ft</td>
+            <td>Very common, this species has very high fecundity and one of the few species of rockfish to withstand heavy fishing pressure</td>
+            <td>Fishing for rockfish is closed entirely in Puget Sound but black rockfish are commonly caught in the Strait and the Pacific.  Hard to fillet but
+                they make for excellent fish tacos</td>
+        </tr>
+        <tr>
+            <td>Quillback Rockfish</td>
+            <td>Shallow when juvenile, 50-200ft+ for adult</td>
+            <td>Slow growing and long lived, these fish commonly live up to half a century.  They are known for their mild poison in their spikes that will cause your 
+                hands to swell up painfully but otherwise non-harmful.  Illegal to keep in most of Washington State. 
+            </td>
+            <td>If you hook one, please carefully unhook without taking out of the water if possible.  Every fish counts in rebuilding a population 
+                and we certainly need to all do our parts in conserving these majestic old beasts. 
+            </td>
+            
+        </tr>
+    </table>
 </body>
 </html>
